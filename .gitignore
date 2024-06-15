@@ -1,0 +1,31 @@
+# Ignore yarn/npm/pnpm lock files
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build/dist directories
+dist/
+dist-ssr/
+
+# Ignore local environment files
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Ignore system generated files
+.DS_Store
+
+# Ignore Visual Studio files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore temporary/swp files
+*.sw?
