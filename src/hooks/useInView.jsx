@@ -22,3 +22,5 @@ const useInView = (options) => {
 };
 
 export default useInView;
+
+
