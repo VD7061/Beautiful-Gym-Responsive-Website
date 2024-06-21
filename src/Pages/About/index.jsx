@@ -1,23 +1,17 @@
-import React, { useEffect } from 'react';
-import "aos/dist/aos.css";
-import AOS from "aos";
-
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import useInView from "../../hooks/useInView";
+import {  scaleIn } from "../../hooks/variants";
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      once: false,
-      mirror: true,
-      anchorPlacement: "top-bottom",
-      offset: 200,
-    });
-  }, []);
+  const [setRef1, inView1] = useInView({ threshold: 0.1 });
+
   return (
     <section
       id="about"
-      className="flex items-center justify-center"
+      className=" min-h-screen flex items-center justify-center"
       style={{
-        height: '70vh',
+        height: "70vh",
         background: `linear-gradient(
           90deg,
           hsla(49, 64%, 57%, 1) 0%,
@@ -26,16 +20,25 @@ const About = () => {
         )`,
       }}
     >
-      <div className=" w-1/2 flex flex-col items-center justify-center"data-aos="fade-up"
-          data-aos-duration="1000">
-<p className="text-5xl font-anton text-white text-center ">&#8220;</p>
+      <motion.div
+        ref={setRef1}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={scaleIn(0.1)}
+        className=" w-1/2 flex flex-col items-center justify-center"
+      >
+        <p className="text-5xl font-anton text-white text-center ">&#8220;</p>
         <h1 className="text-5xl font-anton text-white text-center">
-          GORILLA FITNESS IS CENTRAL IN HELPING ME GAIN THE STAMINA FOR MY RECENT CAMPIONSHIP.
+          GORILLA FITNESS IS CENTRAL IN HELPING ME GAIN THE STAMINA FOR MY
+          RECENT CAMPIONSHIP.
         </h1>
-        <p className="text-sm font-anton text-white text-center mt-6"> - Aman Aziz </p>
-      </div>
+        <p className="text-sm font-anton text-white text-center mt-6">
+          {" "}
+          - Aman Aziz{" "}
+        </p>
+      </motion.div>
     </section>
   );
-}
+};
 
 export default About;

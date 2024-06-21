@@ -1,12 +1,11 @@
-// PricingForm.jsx
 import React from 'react'
 import FormButton from '../Buttons/formButton'
 
 const PricingForm = () => {
   return (
-    <form>
+    <form className="w-full max-w-lg mx-auto">
       <div className="mb-4">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <div>
             <label htmlFor="name" className="block mb-2">
               Name
@@ -18,7 +17,7 @@ const PricingForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block mb-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+            <label htmlFor="lastName" className="block mb-2">
               Last Name
             </label>
             <input
@@ -46,14 +45,14 @@ const PricingForm = () => {
         <input
           type="date"
           id="dob"
-          className="w-1/2 border border-gray-400 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+          className="w-full sm:w-1/2 border border-gray-400 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
         />
       </div>
-      <div className=" mb-4">
+      <div className="mb-4">
         <FormButton
           name="Submit"
           size="large"
-          className="bg-transparent border-4 border-black hover:bg-black text-black hover:text-white rounded-full font-bold transition-colors duration-300"
+          className="bg-transparent border-4 border-black hover:bg-black text-black hover:text-white rounded-full font-bold transition-colors duration-300 w-full sm:w-auto"
         />
       </div>
     </form>
